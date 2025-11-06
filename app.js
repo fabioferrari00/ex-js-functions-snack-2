@@ -34,13 +34,29 @@ console.log(eseguiOperazione(8,4,sottrazione));
 console.log("--- SNACK 4 ---")
 
 function creaTimer(tempo) {
-  return function() {
-    setTimeout(() => {
-      console.log("Tempo scaduto!");
-    }, tempo);
-  };
+    return function() {
+        setTimeout(() => {
+            console.log("Tempo scaduto!");
+        }, tempo);
+    };
 }
 
-// Esempio d’uso:
 const timer5s = creaTimer(5000); 
 timer5s(); 
+
+//SNACK 5: Crea una funzione stampaOgniSecondo con setInterval.
+console.log("--- SNACK 5 ---")
+
+function stampaOgniSecondo(messaggio) {
+  setInterval(() => {
+    console.log(messaggio);
+  }, 1000);
+}
+
+stampaOgniSecondo("banana")
+
+
+
+//SNACK 6: Crea un contatore automatico con setInterval
+
+
