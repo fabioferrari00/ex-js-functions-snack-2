@@ -6,7 +6,7 @@ function sumA(firstNumber, secondNumber){
 
 console.log(sumA(3,6))
 
-const sumB = function(firstNumber,secondNumber){
+const sumB = (firstNumber,secondNumber) => {
     return firstNumber + secondNumber;
 } 
 console.log(sumB(4,12))
