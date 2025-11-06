@@ -29,3 +29,18 @@ const eseguiOperazione = (a,b,operazione) => operazione(a,b);
 console.log(eseguiOperazione(3,4,moltiplicazione));
 console.log(eseguiOperazione(3,4,somma));
 console.log(eseguiOperazione(8,4,sottrazione));
+
+//SNACK 4: Crea un generatore di funzioni creaTimer
+console.log("--- SNACK 4 ---")
+
+function creaTimer(tempo) {
+  return function() {
+    setTimeout(() => {
+      console.log("Tempo scaduto!");
+    }, tempo);
+  };
+}
+
+// Esempio d’uso:
+const timer5s = creaTimer(5000); 
+timer5s(); 
