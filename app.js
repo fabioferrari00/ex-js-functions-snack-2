@@ -74,20 +74,17 @@ contatore()
 
 console.log("--- SNACK 7 ---")
 function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
-  setTimeout(() => {
-    console.log("Inizio stampa messaggi...");
+  
     const intervallo = setInterval(() => {
       console.log(messaggio);
-    }, 1000); 
+    }, tempoAvvio); 
 
     setTimeout(() => {
       clearInterval(intervallo);
-      console.log("Stampa fermata.");
-    }, tempoStop - tempoAvvio);
-  }, tempoAvvio);
+      }, tempoStop);
 }
 
-eseguiEferma("Ciao mondo!", 2000, 7000);
+eseguiEferma("Ciao mondo!", 1000, 5000);
 
 
 
