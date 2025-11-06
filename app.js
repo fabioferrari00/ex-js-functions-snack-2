@@ -1,5 +1,5 @@
 //SNACK 1: Crea una funzione che somma due numeri.
-
+console.log("--- SNACK 1 ---")
 function sumA(firstNumber, secondNumber){
     return firstNumber + secondNumber;
 }
@@ -13,5 +13,19 @@ console.log(sumB(4,12))
 
 //SNACK 2: Crea una arrow function che calcola il quadrato di un numero.
 
+console.log("--- SNACK 2 ---")
 const sqaure = (number) => number * number;
 console.log(sqaure(9))
+
+//SNACK 3: Crea una funzione eseguiOperazione
+console.log("--- SNACK 3 ---")
+
+const somma = (a,b) => a + b;
+const sottrazione = (a,b) => a - b;
+const moltiplicazione = (a,b) => a * b;
+
+const eseguiOperazione = (a,b,operazione) => operazione(a,b);
+
+console.log(eseguiOperazione(3,4,moltiplicazione));
+console.log(eseguiOperazione(3,4,somma));
+console.log(eseguiOperazione(8,4,sottrazione));
