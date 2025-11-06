@@ -6,9 +6,7 @@ function sumA(firstNumber, secondNumber){
 console.log(sumA(3,6))
 
 
-const sumB = (firstNumber,secondNumber) => {
-    return firstNumber + secondNumber;
-} 
+const sumB = (firstNumber,secondNumber) => firstNumber + secondNumber;
 console.log(sumB(4,12))
 
 //SNACK 2: Crea una arrow function che calcola il quadrato di un numero.
@@ -62,30 +60,26 @@ function stampaOgniSecondo(messaggio) {
 console.log("--- SNACK 6 ---")
 function creaContatoreAutomatico(intervallo) {
     let contatore = 0;
-    let timer = 0;
-    
     return function avviaContatore() {
-        timer = setInterval(() => {
+        setInterval(() => {
             contatore++;
             console.log(contatore);
         }, intervallo);
     };
 }
 const contatore = creaContatoreAutomatico(2000)
-/* contatore()
- */
-//SNACK 7: 
+contatore()
+
+//SNACK 7: Crea una funzione che ferma un timer dopo un certo tempo
 
 console.log("--- SNACK 7 ---")
 function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
-  // Attendi fino al tempo di avvio
   setTimeout(() => {
     console.log("Inizio stampa messaggi...");
     const intervallo = setInterval(() => {
       console.log(messaggio);
-    }, 1000); // stampa ogni secondo
+    }, 1000); 
 
-    // Ferma il ciclo dopo il tempo di stop
     setTimeout(() => {
       clearInterval(intervallo);
       console.log("Stampa fermata.");
@@ -93,7 +87,6 @@ function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
   }, tempoAvvio);
 }
 
-// Avvia dopo 2 secondi, ferma dopo 7 secondi
 eseguiEferma("Ciao mondo!", 2000, 7000);
 
 
