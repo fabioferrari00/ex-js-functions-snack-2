@@ -42,21 +42,59 @@ function creaTimer(tempo) {
 }
 
 const timer5s = creaTimer(5000); 
-timer5s(); 
-
+/* timer5s(); 
+ */
 //SNACK 5: Crea una funzione stampaOgniSecondo con setInterval.
 console.log("--- SNACK 5 ---")
 
 function stampaOgniSecondo(messaggio) {
-  setInterval(() => {
-    console.log(messaggio);
-  }, 1000);
+    setInterval(() => {
+        console.log(messaggio);
+    }, 1000);
+}
+       
+/* stampaOgniSecondo("banana")
+ */       
+       
+       
+//SNACK 6: Crea un contatore automatico con setInterval
+       
+console.log("--- SNACK 6 ---")
+function creaContatoreAutomatico(intervallo) {
+    let contatore = 0;
+    let timer = 0;
+    
+    return function avviaContatore() {
+        timer = setInterval(() => {
+            contatore++;
+            console.log(contatore);
+        }, intervallo);
+    };
+}
+const contatore = creaContatoreAutomatico(2000)
+/* contatore()
+ */
+//SNACK 7: 
+
+console.log("--- SNACK 7 ---")
+function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
+  // Attendi fino al tempo di avvio
+  setTimeout(() => {
+    console.log("Inizio stampa messaggi...");
+    const intervallo = setInterval(() => {
+      console.log(messaggio);
+    }, 1000); // stampa ogni secondo
+
+    // Ferma il ciclo dopo il tempo di stop
+    setTimeout(() => {
+      clearInterval(intervallo);
+      console.log("Stampa fermata.");
+    }, tempoStop - tempoAvvio);
+  }, tempoAvvio);
 }
 
-stampaOgniSecondo("banana")
+// Avvia dopo 2 secondi, ferma dopo 7 secondi
+eseguiEferma("Ciao mondo!", 2000, 7000);
 
-
-
-//SNACK 6: Crea un contatore automatico con setInterval
 
 
